@@ -6,6 +6,11 @@
         {% block stylesheets %}{% endblock %}
         <!-- <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> -->
         <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        
+		<!-- load jQuery and tablesorter scripts -->
+		<script type="text/javascript" src="{{ asset('js/jquery-latest.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('js/jquery.tablesorter.js') }}"></script>
+        
     </head>
     <body>
         {% block body %}{% endblock %}
