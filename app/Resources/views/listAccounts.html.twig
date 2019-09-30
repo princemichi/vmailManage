@@ -5,11 +5,14 @@
 
 <h1>List accounts</h1>
 
-<table>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..."><br/>
+
+<table id="mySort" class="tablesorter">
     <thead>
     <tr>
-        <th>Username</th>
-        <th>Domain</th>
+        <th align="right">Username</th>
+        <th>@</th>
+        <th align="left">Domain</th>
         <!--<th>Password</th>-->
         <th>Quota</th>
         <th>Enabled</th>
@@ -18,11 +21,12 @@
 
     </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable" class="tablesorter">
 {% for item in accounts %}
     <tr>
-        <td>{{ item.username }}</td>
-        <td>{{ item.domain }}</td>
+        <td align="right">{{ item.username }}</td>
+        <td>@</td>
+        <td align="left">{{ item.domain }}</td>
         <!--<td>{{ item.password }}</td>-->
         <td>{{ item.quota }}</td>
         <td>{% if item.enabled %} yes {% else %} no {% endif %}</td>
@@ -36,7 +40,7 @@
     </tbody>
     <tfoot>
     <tr>
-        <td colspan="5"></td>
+        <td colspan="6"></td>
         <td><a href="new">+ new</a></td>
     </tr>
     </tfoot>
